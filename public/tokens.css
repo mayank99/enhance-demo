@@ -74,3 +74,16 @@
 		--accent-2: var(--violet-10);
 	}
 }
+
+[data-theme='light'] {
+	--background-1: var(--blue-gray-12);
+	--background-2: var(--blue-gray-11);
+	--background-3: var(--blue-gray-8);
+
+	--text-1: var(--blue-gray-2);
+	--text-2: var(--blue-gray-4);
+	--text-3: var(--blue-gray-6);
+
+	--accent-1: var(--violet-4);
+	--accent-2: var(--violet-10);
+}
