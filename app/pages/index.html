@@ -28,31 +28,41 @@
 
 	<hr />
 
-	<article>
-		<h2>Sign up for a sneak peak</h2>
-		<form>
-			<label>
-				<span>Name</span>
-				<input type="text" placeholder="You" name="name" />
-			</label>
+	<x-card>
+		<article>
+			<h2>Sign up for a sneak peak</h2>
+			<form>
+				<label>
+					<span>Name</span>
+					<form-input type="text" placeholder="You" name="name"></form-input>
+				</label>
 
-			<label>
-				<span>Email</span>
-				<input
-					type="email"
-					placeholder="you@example.com"
-					name="email"
-					required
-				/>
-			</label>
+				<label>
+					<span>Email</span>
+					<form-input
+						type="email"
+						placeholder="you@example.com"
+						name="email"
+						required
+					></form-input>
+				</label>
 
-			<button type="submit">Sign up</button>
-		</form>
-	</article>
+				<form-button type="submit">Sign up</form-button>
+			</form>
+		</article>
+	</x-card>
 </main>
 
 <style>
 	@import url('https://unpkg.com/open-props/shadows.min.css');
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+		color: inherit;
+	}
 
 	html {
 		font-family: system-ui, sans-serif;
@@ -62,6 +72,7 @@
 		background: var(--background-2);
 		color: var(--text-2);
 		font-size: var(--step-0);
+		line-height: 1.5;
 	}
 
 	h1 {
@@ -72,6 +83,7 @@
 	h2 {
 		color: var(--text-1);
 		font-size: var(--step-2);
+		margin: 0;
 	}
 
 	:focus-visible {
@@ -81,5 +93,27 @@
 
 	::selection {
 		background: var(--accent-2);
+	}
+
+	main {
+		margin-inline: auto;
+		padding-block: var(--space-xl);
+		padding-inline: var(--space-s);
+		max-width: min(50ch, 100%);
+	}
+
+	form {
+		display: grid;
+		gap: var(--space-xs);
+	}
+
+	label {
+		display: grid;
+		gap: var(--space-3xs);
+		color: var(--text-2);
+	}
+
+	hr {
+		margin-block: var(--space-xs);
 	}
 </style>
