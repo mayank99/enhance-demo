@@ -6,6 +6,7 @@ export default function Head(req = {}) {
 		<meta charset="utf-8" />
 		<title>Meow</title>
 		<meta name="color-scheme" content="${theme || 'light dark'}" />
+		<link rel="stylesheet" href="/_static/tokens.css" />
 	</head>
 	`;
 }
