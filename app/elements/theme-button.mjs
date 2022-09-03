@@ -1,5 +1,3 @@
-import enhance from '@enhance/enhance';
-
 export default function ThemeButton({ html }) {
 	return html`<form action="/switch-theme" method="POST">
 			<button>Change theme</button>
@@ -10,12 +8,15 @@ export default function ThemeButton({ html }) {
 					super();
 					this.form = this.querySelector('form');
 					this.form.addEventListener('submit', this.onSubmit.bind(this));
+
+					this.spinner = document.createElement('span');
+					this.spinner.textContent = 'Loading...';
 				}
 
 				async onSubmit(event) {
 					event.preventDefault();
 					try {
-						this.loading = true;
+						this.form.append(this.spinner);
 
 						const response = await fetch(this.form.action, {
 							method: 'POST',
@@ -30,7 +31,7 @@ export default function ThemeButton({ html }) {
 							.setAttribute('content', theme);
 					} catch {
 					} finally {
-						this.loading = false;
+						this.spinner.remove();
 					}
 				}
 			}
