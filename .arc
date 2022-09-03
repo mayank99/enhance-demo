@@ -5,4 +5,4 @@ myproj
 enhance/arc-plugin-enhance
 
 @bundles
-theme-button './app/elements/theme-button.mjs'
+theme-button 'public/theme-button.mjs'
